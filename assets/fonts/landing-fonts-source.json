@@ -1,0 +1,20 @@
+{
+  "stylesheet": "https://fonts.googleapis.com/css2?family=Onest:wght@100..900&family=Tektur:wght@400..900&display=swap",
+  "files": {
+    "https://fonts.gstatic.com/s/onest/v11/gNMZW3F-SZuj7zOT0IfSjTS16cPh9R6Zsg.ttf": "Onest-0.ttf",
+    "https://fonts.gstatic.com/s/onest/v11/gNMZW3F-SZuj7zOT0IfSjTS16cPhdR-Zsg.ttf": "Onest-1.ttf",
+    "https://fonts.gstatic.com/s/onest/v11/gNMZW3F-SZuj7zOT0IfSjTS16cPhqx-Zsg.ttf": "Onest-2.ttf",
+    "https://fonts.gstatic.com/s/onest/v11/gNMZW3F-SZuj7zOT0IfSjTS16cPh9R-Zsg.ttf": "Onest-3.ttf",
+    "https://fonts.gstatic.com/s/onest/v11/gNMZW3F-SZuj7zOT0IfSjTS16cPhxx-Zsg.ttf": "Onest-4.ttf",
+    "https://fonts.gstatic.com/s/onest/v11/gNMZW3F-SZuj7zOT0IfSjTS16cPhKxiZsg.ttf": "Onest-5.ttf",
+    "https://fonts.gstatic.com/s/onest/v11/gNMZW3F-SZuj7zOT0IfSjTS16cPhEhiZsg.ttf": "Onest-6.ttf",
+    "https://fonts.gstatic.com/s/onest/v11/gNMZW3F-SZuj7zOT0IfSjTS16cPhdRiZsg.ttf": "Onest-7.ttf",
+    "https://fonts.gstatic.com/s/onest/v11/gNMZW3F-SZuj7zOT0IfSjTS16cPhXBiZsg.ttf": "Onest-8.ttf",
+    "https://fonts.gstatic.com/s/tektur/v6/XoHN2YHtS7q969kXCjzlV0aSkS_o8OacmTe0TYlYFot8TrwuVYtO.ttf": "Tektur-9.ttf",
+    "https://fonts.gstatic.com/s/tektur/v6/XoHN2YHtS7q969kXCjzlV0aSkS_o8OacmTe0TYlYFot8TrwcVYtO.ttf": "Tektur-10.ttf",
+    "https://fonts.gstatic.com/s/tektur/v6/XoHN2YHtS7q969kXCjzlV0aSkS_o8OacmTe0TYlYFot8TrzwUotO.ttf": "Tektur-11.ttf",
+    "https://fonts.gstatic.com/s/tektur/v6/XoHN2YHtS7q969kXCjzlV0aSkS_o8OacmTe0TYlYFot8TrzJUotO.ttf": "Tektur-12.ttf",
+    "https://fonts.gstatic.com/s/tektur/v6/XoHN2YHtS7q969kXCjzlV0aSkS_o8OacmTe0TYlYFot8TryuUotO.ttf": "Tektur-13.ttf",
+    "https://fonts.gstatic.com/s/tektur/v6/XoHN2YHtS7q969kXCjzlV0aSkS_o8OacmTe0TYlYFot8TryHUotO.ttf": "Tektur-14.ttf"
+  }
+}

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OUTCOMMS AI — воркшоп по ChatGPT</title>
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="layout.css">
+  <link rel="stylesheet" href="lesson.css">
+  <link rel="stylesheet" href="workshop.css">
+  <script src="workshop.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body class="presentation">
+  <div class="app" id="app">
+    <aside class="sidebar" id="program-sidebar" aria-label="Части воркшопа">
+      <div class="sidebar-heading"><span>Части</span><span class="program-total">02</span></div>
+      <nav id="program-list" aria-label="Выбрать часть"></nav>
+      <div class="sidebar-bottom">Кружок внутрикомов<span>Воркшоп по ChatGPT</span></div>
+    </aside>
+    <button class="backdrop" id="backdrop" type="button" aria-label="Закрыть меню" tabindex="-1" hidden></button>
+    <main class="main">
+      <header class="topbar">
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-controls="program-sidebar" aria-expanded="true" aria-label="Скрыть части">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M9 4v16"/></svg>
+        </button>
+        <div class="current-program"><span id="program-number" class="eyebrow"></span><h1 id="program-title"></h1></div>
+        <div class="brand" aria-label="OUTCOMMS AI">OUTCOMMS <span>AI</span></div>
+      </header>
+      <div class="workspace">
+        <div class="stage" id="stage" role="region" aria-label="Текущий слайд" tabindex="0"></div>
+      </div>
+      <footer class="controls" aria-label="Навигация по слайдам">
+        <div class="slide-position"><label for="slide-picker">Слайд</label><select id="slide-picker" aria-label="Выбрать слайд"></select><span id="slide-total"></span></div>
+        <span class="keyboard-hint">Листайте стрелками ← →</span>
+        <div class="arrows"><button type="button" id="previous" aria-label="Предыдущий слайд">←</button><button type="button" id="next" aria-label="Следующий слайд">→</button></div>
+      </footer>
+      <p class="sr-only" id="announcement" role="status" aria-live="polite"></p>
+    </main>
+  </div>
+  <noscript>Для переключения частей и слайдов включите JavaScript в браузере.</noscript>
+</body>
+</html>

@@ -1,0 +1,50 @@
+/* Visual source: /kruzhok, frontend branch feature/374-kruzhok-staging-site,
+   commit b67ab11, public/kruzhok/index.html.
+   Fonts: Tektur / Onest. Source components: .krj-af, .krj-gal, .krj-mnav.
+   Fonts are served locally; source URLs are recorded in assets/fonts/. */
+@import url('./assets/fonts/landing-fonts.css');
+:root {
+  --color-white: #ffffff;
+  --color-black: #1a1a1a;
+  --color-background: #fffdf5;
+  --color-lime: #caff00;
+  --color-blue: #0974f0;
+  --color-light-blue: #e6f0ff;
+  --color-mauve: #dbbffe;
+  --color-text: #1a1a1a;
+  --color-muted: #8c8c87;
+  --font-family: 'Onest', Arial, sans-serif;
+  --font-heading: 'Tektur', Arial, sans-serif;
+  --border: 3px solid var(--color-black);
+  --shadow: 5px 5px 0 0 var(--color-black);
+}
+* { box-sizing: border-box; }
+.presentation {
+  margin: 0;
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-family);
+  font-weight: 400;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+.presentation h1, .presentation h2, .presentation h3 {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 12px;
+  border: 2px solid var(--color-black);
+  background: var(--color-lime);
+  color: var(--color-black);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+.tag--blue { background: var(--color-blue); color: white; }
+.tag--mauve { background: var(--color-mauve); }

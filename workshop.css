@@ -1,0 +1,84 @@
+/* Workshop-specific blocks in the course palette: square frames, hard shadows, lime accent. */
+
+/* Two columns of step chains: chat versus process. */
+.shift-compare { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.shift-column { min-width: 0; padding: 20px; border: 2px solid var(--color-black); background: white; box-shadow: 4px 4px 0 var(--color-black); }
+.shift-column--now { background: var(--color-light-blue); }
+.presentation .shift-column h3 { font-size: clamp(18px, 1.5vw, 22px); line-height: 1.2; margin-bottom: 14px; }
+.shift-steps { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.shift-steps li { padding: 8px 10px; border: 1px solid var(--color-black); background: white; font-size: clamp(15px, 1.2vw, 18px); line-height: 1.3; }
+.shift-steps li + li::before { content: '→ '; color: #075bbb; }
+
+
+/* Three questions of an information system, answered on one example. */
+.three-questions { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.three-questions .lesson-card { padding: 18px; }
+.question-number { margin: 0 0 8px; font-family: var(--font-heading); font-size: 13px; font-weight: 700; color: #075bbb; }
+.presentation .three-questions h3 { font-size: clamp(17px, 1.4vw, 21px); }
+.system-example { margin: 14px 0 0; padding-top: 12px; border-top: 2px solid var(--color-black); font-size: clamp(15px, 1.2vw, 18px); line-height: 1.4; }
+
+@media (max-width: 1100px) {
+  .three-questions { grid-template-columns: 1fr; }
+}
+@media (max-width: 760px) {
+  .shift-compare { grid-template-columns: 1fr; }
+  .shift-column { padding: 16px; }
+}
+
+/* Slide 2: how specialists got tools before and now, and the consequence. */
+.shift-copy { margin: 0; font-size: clamp(17px, 1.45vw, 21px); line-height: 1.45; }
+.shift-steps--options { margin-top: 14px; }
+.shift-steps--options li + li::before { content: 'или '; color: #555; }
+.therefore-label { margin: 24px 0 12px; font-family: var(--font-heading); font-size: clamp(18px, 1.5vw, 22px); font-weight: 800; text-transform: uppercase; }
+.therefore-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.therefore-card { min-width: 0; padding: 18px 20px; border: 2px solid var(--color-black); background: #efefe9; color: #555; }
+.therefore-card--best { background: var(--color-lime); color: var(--color-black); box-shadow: 4px 4px 0 var(--color-black); }
+.presentation .therefore-card h3 { font-size: clamp(17px, 1.4vw, 21px); line-height: 1.25; margin-bottom: 8px; }
+.therefore-card p { margin: 0; font-size: clamp(16px, 1.35vw, 20px); line-height: 1.4; }
+@media (max-width: 760px) { .therefore-grid { grid-template-columns: 1fr; } }
+
+/* Outcome label under a step chain. */
+.shift-result { display: inline-block; margin: 16px 0 0; padding: 6px 12px; border: 2px solid var(--color-black); background: #efefe9; font-family: var(--font-heading); font-size: 15px; font-weight: 700; text-transform: uppercase; }
+.shift-result--now { background: var(--color-lime); }
+
+/* Practicum «Идея»: what a scheduled task can and cannot do. */
+.can-list { margin: 0; padding-left: 22px; font-size: clamp(16px, 1.3vw, 19px); line-height: 1.4; }
+.can-list li + li { margin-top: 8px; }
+
+/* Practicum «Задание»: numbered actions, then a done-check. */
+.howto-steps { counter-reset: howto; display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.howto-steps > li { counter-increment: howto; position: relative; padding: 12px 16px 12px 64px; border: 2px solid var(--color-black); background: white; }
+.howto-steps > li::before { content: counter(howto, decimal-leading-zero); position: absolute; left: 0; top: 0; bottom: 0; width: 48px; display: grid; place-items: center; border-right: 2px solid var(--color-black); background: var(--color-blue); color: white; font-family: var(--font-heading); font-weight: 800; font-size: 18px; }
+.howto-action { margin: 0; font-weight: 700; font-size: clamp(16px, 1.35vw, 20px); line-height: 1.3; }
+.howto-detail { margin-top: 4px; font-size: clamp(15px, 1.2vw, 18px); line-height: 1.4; color: #333; }
+.howto-done { margin: 14px 0 0; padding: 12px 16px; border: 2px solid var(--color-black); background: #eee2ff; font-size: clamp(16px, 1.3vw, 19px); line-height: 1.4; }
+.howto-steps + .lesson-takeaway, .howto-done + .lesson-takeaway { margin-top: 14px; }
+
+/* Practicum «Разбор»: symptom, cause, fix. */
+.trouble-table th:first-child, .trouble-table td:first-child { font-weight: 700; }
+
+@media (max-width: 760px) {
+  .howto-steps > li { padding: 10px 12px 10px 52px; }
+  .howto-steps > li::before { width: 38px; font-size: 15px; }
+}
+
+/* Practicum «Шаг» and «Сверка»: actions on the left, the expected screen on the right. */
+.step-layout { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 24px; align-items: start; }
+.step-label { margin: 0 0 10px; font-family: var(--font-heading); font-size: 15px; font-weight: 800; text-transform: uppercase; color: #075bbb; }
+.step-todo { counter-reset: todo; margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+.step-todo li { counter-increment: todo; display: grid; grid-template-columns: 30px minmax(0, 1fr); gap: 10px; align-items: baseline; font-size: clamp(17px, 1.4vw, 21px); line-height: 1.35; }
+.step-todo li::before { content: counter(todo); display: grid; place-items: center; width: 28px; height: 28px; border: 2px solid var(--color-black); background: var(--color-lime); font-family: var(--font-heading); font-weight: 800; font-size: 14px; }
+.step-appears { margin: 16px 0 0; padding: 12px 14px; border: 2px solid var(--color-black); background: #eee2ff; font-size: clamp(15px, 1.25vw, 18px); line-height: 1.4; }
+.step-ifnot { margin: 10px 0 0; font-size: clamp(14px, 1.1vw, 16px); line-height: 1.4; color: #444; }
+.check-list { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+.check-list li { display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 10px; align-items: baseline; font-size: clamp(17px, 1.4vw, 21px); line-height: 1.35; }
+.check-list li::before { content: ''; width: 20px; height: 20px; border: 2px solid var(--color-black); background: white; }
+.copy-block { position: relative; margin-top: 14px; border: 2px solid var(--color-black); background: var(--color-light-blue); }
+.copy-block pre { margin: 0; padding: 12px 14px 44px; white-space: pre-wrap; font-family: var(--font-family); font-size: clamp(14px, 1.1vw, 16px); line-height: 1.45; }
+.copy-button { position: absolute; right: 8px; bottom: 8px; padding: 6px 12px; border: 2px solid var(--color-black); background: var(--color-lime); font-weight: 700; font-size: 13px; box-shadow: 2px 2px 0 var(--color-black); }
+.copy-button:active { transform: translate(1px, 1px); box-shadow: 1px 1px 0 var(--color-black); }
+.step-shot { margin: 0; }
+.step-shot-frame { aspect-ratio: 16 / 10; display: grid; place-items: center; border: 2px dashed #8c8c87; background: repeating-linear-gradient(-45deg, #fffdf5, #fffdf5 12px, #f3f1e8 12px, #f3f1e8 24px); }
+.step-shot-frame span { padding: 6px 10px; border: 2px solid var(--color-black); background: white; font-family: var(--font-heading); font-size: 13px; font-weight: 700; text-transform: uppercase; }
+.step-shot figcaption { margin-top: 8px; font-size: 14px; line-height: 1.4; color: #555; }
+@media (max-width: 1100px) { .step-layout { grid-template-columns: 1fr; } }
