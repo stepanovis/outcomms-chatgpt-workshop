@@ -13,21 +13,20 @@
   const howto = (items, done) => `<ol class="howto-steps">${items.map(([action, detail]) => `<li><p class="howto-action">${action}</p>${detail ? `<div class="howto-detail">${detail}</div>` : ''}</li>`).join('')}</ol>`
     + (done ? `<p class="howto-done"><b>Готово, если:</b> ${done}</p>` : '');
 
-  // Step-by-step practicum: one action per slide. Screenshots are taken on a real run;
-  // until then the frame names the screen the participant should see.
+  // Step-by-step practicum: one action per slide. No screenshot frames:
+  // the host streams the live screen, so slides carry only the actions and checks.
   const esc = text => text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   const copy = text => `<div class="copy-block"><pre>${esc(text)}</pre><button type="button" class="copy-button">Скопировать</button></div>`;
-  const shot = caption => `<figure class="step-shot"><div class="step-shot-frame"><span>Скриншот с прогона</span></div><figcaption>${caption}</figcaption></figure>`;
-  const step = (n, block, title, {todo, text, appears, ifnot, screen}) => ({
+  const step = (n, block, title, {todo, text, appears, ifnot}) => ({
     eyebrow: `Шаг ${String(n).padStart(2, '0')} / ${block}`, title, lead: '',
-    html: `<div class="step-layout"><div class="step-main"><p class="step-label">Сделайте</p><ol class="step-todo">${todo.map(item => `<li>${item}</li>`).join('')}</ol>${text ? copy(text) : ''}`
+    html: `<div class="step-main"><p class="step-label">Сделайте</p><ol class="step-todo">${todo.map(item => `<li>${item}</li>`).join('')}</ol>${text ? copy(text) : ''}`
       + (appears ? `<p class="step-appears"><b>Должно появиться:</b> ${appears}</p>` : '')
       + (ifnot ? `<p class="step-ifnot"><b>Если не так:</b> ${ifnot}</p>` : '')
-      + `</div>${shot(screen)}</div>`,
+      + `</div>`,
   });
-  const checkpoint = (n, block, title, checks, screen) => ({
+  const checkpoint = (n, block, title, checks) => ({
     eyebrow: `Сверка ${n} / ${block}`, title, lead: '',
-    html: `<div class="step-layout"><div class="step-main"><p class="step-label">У всех так?</p><ul class="check-list">${checks.map(item => `<li>${item}</li>`).join('')}</ul><p class="step-ifnot">Идём дальше, только когда совпало у всех. Если у кого-то нет — помогаем сейчас.</p></div>${shot(screen)}</div>`,
+    html: `<div class="step-main"><p class="step-label">У всех так?</p><ul class="check-list">${checks.map(item => `<li>${item}</li>`).join('')}</ul><p class="step-ifnot">Идём дальше, только когда совпало у всех. Если у кого-то нет — помогаем сейчас.</p></div>`,
   });
 
   const lettersPrompt = 'Придумай 8 писем-фоллоу-апов рабочих встреч за эту неделю. Для каждого письма дай строку «Тема: Фоллоу-ап: <название встречи>» и текст: дата встречи, участники, решения, задачи (кто, что, к какому сроку). В двух письмах у одной задачи не указывай срок. Восьмое письмо сделай исправлением к третьей встрече: та же тема с пометкой «(исправление)», один срок изменён. Пиши по-русски, коротко.';
