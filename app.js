@@ -99,6 +99,8 @@
     $('next').disabled = index === program.slides.length - 1;
     $('announcement').textContent = `${program.title}. Слайд ${index + 1} из ${program.slides.length}: ${slide.title}`;
     savePosition();
+    // Keep the address shareable and reload-safe without polluting browser history.
+    history.replaceState(null, '', `#${program.id}/${index + 1}`);
   }
 
   function goTo(index) {
@@ -137,16 +139,19 @@
     }
   });
   compact.addEventListener('change', () => setMenu(!compact.matches));
-  restorePosition();
   // An explicit lecture link takes precedence over the last viewed program.
-  const requested = /^#([a-z-]+)\/(\d+)$/.exec(location.hash);
-  if (requested) {
+  function applyHash() {
+    const requested = /^#([a-z-]+)\/(\d+)$/.exec(location.hash);
+    if (!requested) return false;
     const index = programs.findIndex(program => program.id === requested[1]);
-    if (index >= 0) {
-      selected = index;
-      positions[index] = Math.max(0, Math.min(programs[index].slides.length - 1, Number(requested[2]) - 1));
-    }
+    if (index < 0) return false;
+    selected = index;
+    positions[index] = Math.max(0, Math.min(programs[index].slides.length - 1, Number(requested[2]) - 1));
+    return true;
   }
+  window.addEventListener('hashchange', () => { if (applyHash()) render(); });
+  restorePosition();
+  applyHash();
   setMenu(menuOpen);
   render();
 })();
